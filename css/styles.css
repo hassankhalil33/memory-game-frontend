@@ -28,11 +28,6 @@ body {
     height: 80%;
 }
 
-.cards-div > img{
-    width: 20%;
-    padding: 0 4%;
-}
-
 .info-div {
     margin: 0 5%;
     width: 20%;
@@ -45,6 +40,38 @@ body {
     color: #355C7D;
 }
 
-.turned {
-    background: url("");
+.img {
+    height: 40%;
+    width: 20%;
+    padding: 0 4%;
+    background: url("../images/card.png");
+    background-repeat: no-repeat;
+    background-size: auto 95%;
+}
+
+.turned-1 {
+    background: url("../images/logo-1.png");
+    height: 40%;
+    width: 20%;
+    padding: 0 4%;
+    background-repeat: no-repeat;
+    background-size: auto 80%;
+}
+
+.turned-2 {
+    background: url("../images/logo-2.png");
+    height: 40%;
+    width: 20%;
+    padding: 0 4%;
+    background-repeat: no-repeat;
+    background-size: auto 45%;
+}
+
+.turned-3 {
+    background: url("../images/logo-3.png");
+    height: 40%;
+    width: 20%;
+    padding: 0 4%;
+    background-repeat: no-repeat;
+    background-size: auto 45%;
 }

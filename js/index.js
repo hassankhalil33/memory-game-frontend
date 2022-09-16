@@ -17,9 +17,10 @@ function shuffle(array) {
     };
 };
 
-image.forEach(element => {
-    element.addEventListener('click', (event) => {
-        element.classList.toggle('turned');
+image.forEach((element, index) => {
+    element.addEventListener("click", (event) => {
+        element.classList.toggle("turned-" + array[index]);
+        element.classList.toggle("img");
         event.stopPropagation();
     })
 });
