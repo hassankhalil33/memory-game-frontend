@@ -61,13 +61,37 @@ function initBoard() {
     }
 };
 
-function flipCard() {
-    let cardId = this.getAttribute("id");
-    if(this.getAttribute("src") != "images/empty.png") {
-        pickedCards.push(cardList[cardId].name);
-        pickedCardsId.push(cardId);
-        this.setAttribute("src", cardList[cardId].image);
-    }
+function flipCard(cards) {
+    if(pickedCards !=  2) {
+        let cardId = this.getAttribute("id");
+
+        if(this.getAttribute("src") != "images/empty.png") {
+            pickedCards.push(cardList[cardId].name);
+            pickedCardsId.push(cardId);
+            this.setAttribute("src", cardList[cardId].image);
+
+            if(pickedCards.length == 2) {
+                setTimeout(checkMatch, 600);
+            };
+        };
+    };
+};
+
+function checkMatch() {
+    let firstCard = pickedCardsId[0];
+    let secondCard = pickedCardsId[1];
+    let cards = document.querySelectorAll("img");
+
+    if(pickedCards[0] == pickedCards[1]) {
+        cards[firstCard].setAttribute("src", "images/empty.png");
+        cards[secondCard].setAttribute("src", "images/empty.png");
+    } else {
+        cards[firstCard].setAttribute("src", "images/card.png");
+        cards[secondCard].setAttribute("src", "images/card.png");
+    };
+
+    pickedCards = [];
+    pickedCardsId = [];
 };
 
 // Main Script
