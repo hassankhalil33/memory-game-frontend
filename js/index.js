@@ -103,5 +103,8 @@ function checkMatch() {
 
 // Main Script
 
-shuffle(cardList);
-initBoard();
+//Wait for window to load
+addEventListener('load', () => {
+    shuffle(cardList);
+    initBoard();
+});
