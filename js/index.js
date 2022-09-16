@@ -2,10 +2,12 @@
 
 const image = document.querySelectorAll(".img");
 const cardsDiv = document.querySelector(".cards-div");
+const scoreSpan = document.querySelector(".score");
 
 let flippedCards = [];
 let pickedCards = [];
 let pickedCardsId = [];
+let score = 0;
 
 const cardList = [
     {
@@ -61,7 +63,8 @@ function initBoard() {
     }
 };
 
-function flipCard(cards) {
+//Flips card
+function flipCard() {
     if(pickedCards !=  2) {
         let cardId = this.getAttribute("id");
 
@@ -77,6 +80,7 @@ function flipCard(cards) {
     };
 };
 
+//Checks cards for match
 function checkMatch() {
     let firstCard = pickedCardsId[0];
     let secondCard = pickedCardsId[1];
@@ -85,18 +89,19 @@ function checkMatch() {
     if(pickedCards[0] == pickedCards[1]) {
         cards[firstCard].setAttribute("src", "images/empty.png");
         cards[secondCard].setAttribute("src", "images/empty.png");
+        score += 10;
     } else {
         cards[firstCard].setAttribute("src", "images/card.png");
         cards[secondCard].setAttribute("src", "images/card.png");
+        score -= 5;
     };
 
+    scoreSpan.textContent = score;
     pickedCards = [];
     pickedCardsId = [];
 };
 
 // Main Script
 
-initBoard();
-
 shuffle(cardList);
-console.log(cardList);
+initBoard();
