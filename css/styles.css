@@ -1,3 +1,21 @@
-body {
-    background-color: aqua;
+* {
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    background-color: #355C7D;
+    display: flex;
+    justify-content: center;
+}
+
+.game-window {
+    display: flex;
+    background-color: #F67280;
+    width: 80vw;
+    height: 80vh;
+    margin-top: 10vh;
+    justify-content: center;
+    align-items: center;
+}
+
