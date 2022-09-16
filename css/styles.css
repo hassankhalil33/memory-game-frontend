@@ -44,34 +44,6 @@ body {
     height: 40%;
     width: 20%;
     padding: 0 4%;
-    background: url("../images/card.png");
     background-repeat: no-repeat;
     background-size: auto 95%;
-}
-
-.turned-1 {
-    background: url("../images/logo-1.png");
-    height: 40%;
-    width: 20%;
-    padding: 0 4%;
-    background-repeat: no-repeat;
-    background-size: auto 80%;
-}
-
-.turned-2 {
-    background: url("../images/logo-2.png");
-    height: 40%;
-    width: 20%;
-    padding: 0 4%;
-    background-repeat: no-repeat;
-    background-size: auto 45%;
-}
-
-.turned-3 {
-    background: url("../images/logo-3.png");
-    height: 40%;
-    width: 20%;
-    padding: 0 4%;
-    background-repeat: no-repeat;
-    background-size: auto 45%;
 }

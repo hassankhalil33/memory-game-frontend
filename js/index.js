@@ -1,4 +1,5 @@
 const image = document.querySelectorAll(".img");
+const cardsDiv = document.querySelector(".cards-div");
 let flippedCards = [];
 
 const cardList = [
@@ -36,11 +37,21 @@ const cardList = [
 shuffle(cardList);
 console.log(cardList);
 
-function shuffle(array) {
+const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     };
+};
+
+const initBoard = () => {
+    for (let i = 0; i < cardList.length; i++) {
+        let card = document.createElement("img");
+        card.setAttribute("src", "images/card.png");
+        card.setAttribute("id", i);
+        card.addEventListener("click", flipCard);
+        cardsDiv.appendChild(card);
+    }
 };
 
 image.forEach((element) => {
@@ -48,6 +59,6 @@ image.forEach((element) => {
 });
 
 
-function flipCard(event) {
+const flipCard = (event) => {
     return
 };
