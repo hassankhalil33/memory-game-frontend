@@ -44,3 +44,7 @@ body {
     justify-content: space-between;
     color: #355C7D;
 }
+
+.turned {
+    background: url("");
+}
