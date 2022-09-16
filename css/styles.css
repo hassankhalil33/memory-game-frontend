@@ -19,3 +19,16 @@ body {
     align-items: center;
 }
 
+.cards-div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+.cards-div > img{
+    width: 15%;
+    padding: 0 6%;
+}
