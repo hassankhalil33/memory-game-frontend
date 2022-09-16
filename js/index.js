@@ -1,6 +1,11 @@
+// Init Variables
+
 const image = document.querySelectorAll(".img");
 const cardsDiv = document.querySelector(".cards-div");
+
 let flippedCards = [];
+let pickedCards = [];
+let pickedCardsId = [];
 
 const cardList = [
     {
@@ -32,10 +37,9 @@ const cardList = [
         name: "py",
         image: "images/logo-py"
     }
-]
+];
 
-shuffle(cardList);
-console.log(cardList);
+// Functions
 
 const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -49,6 +53,7 @@ const initBoard = () => {
         let card = document.createElement("img");
         card.setAttribute("src", "images/card.png");
         card.setAttribute("id", i);
+        card.classList.add("img");
         card.addEventListener("click", flipCard);
         cardsDiv.appendChild(card);
     }
@@ -62,3 +67,10 @@ image.forEach((element) => {
 const flipCard = (event) => {
     return
 };
+
+// Main Script
+
+initBoard();
+
+shuffle(cardList);
+console.log(cardList);
