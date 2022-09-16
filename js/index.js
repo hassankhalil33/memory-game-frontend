@@ -1,14 +1,16 @@
 const image = document.querySelectorAll(".img");
-const card1 = image[0];
-const card2 = image[1];
-const card3 = image[2];
-const card4 = image[3];
-const card5 = image[4];
-const card6 = image[5];
+let flippedCards = [];
 
 const array = [1, 1, 2, 2, 3, 3];
 shuffle(array);
 console.log(array);
+
+const card1 = array[0];
+const card2 = array[1];
+const card3 = array[2];
+const card4 = array[3];
+const card5 = array[4];
+const card6 = array[5];
 
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -17,10 +19,30 @@ function shuffle(array) {
     };
 };
 
-image.forEach((element, index) => {
-    element.addEventListener("click", (event) => {
+image.forEach((element) => {
+    element.addEventListener("click", flipCard);
+});
+
+
+function flipCard(event) {
+    if (flippedCards.length > 2) {
+        image.forEach((element) => {
+            element.classList.remove("turned-1");
+            element.classList.remove("turned-2");
+            element.classList.remove("turned-3");
+            element.classList.add("img");
+            flippedCards = [];
+        });
+    };
+
+    if (flippedCards.length > 1) {
+        if (flippedCards[0] === flippedCards[1]) {
+
+        };
+    };
+
+    image.forEach((element, index) => {
         element.classList.toggle("turned-" + array[index]);
         element.classList.toggle("img");
-        event.stopPropagation();
-    })
-});
+    });
+};
